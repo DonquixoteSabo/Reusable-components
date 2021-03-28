@@ -1,8 +1,8 @@
 const theme = {
   colors: {
-    white: 'fff',
+    white: '#FAFBFD',
     gray: '#3F3F3F',
-    silver: '9E9E9E',
+    silver: '#9E9E9E',
     //Button colors
     default: '#E0E0E0',
     defaultHover: '#AEAEAE',
