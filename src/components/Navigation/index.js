@@ -29,7 +29,7 @@ const navItems = [
 function Navigation() {
   return (
     <Nav>
-      <StyledLink to="">
+      <StyledLink to="/">
         <header>
           <span>Reusable</span> Components!
         </header>

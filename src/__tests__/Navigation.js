@@ -48,6 +48,7 @@ describe('Navigation', () => {
     const typographyLink = screen.getByText('Typography');
     const spacesLink = screen.getByText('Spaces');
     const gridLink = screen.getByText('Grid');
+    const pageLogo = screen.getByText('Reusable');
 
     //Buttons page
     fireEvent.click(buttonsLink);
@@ -74,6 +75,11 @@ describe('Navigation', () => {
     fireEvent.click(gridLink);
     expect(
       screen.getByText('You will see something about grid here soon!')
+    ).toBeInTheDocument();
+    //Main page
+    fireEvent.click(pageLogo);
+    expect(
+      screen.getByText('ale ze to strona glowna jest to kox akurat')
     ).toBeInTheDocument();
   });
 });
