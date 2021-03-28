@@ -1,9 +1,9 @@
-import React from 'react';
+import Title from 'components/Title';
 
 function InputPage() {
   return (
     <div>
-      <h1>strona z inputami ale koc</h1>
+      <Title>strona z inputami ale koc</Title>
     </div>
   );
 }

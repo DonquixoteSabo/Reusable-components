@@ -1,9 +1,12 @@
-import Navigation from 'components/Navigation';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import Navigation from 'components/Navigation';
 import ButtonPage from 'views/ButtonPage';
-import { Wrapper } from 'Root.styles.js';
 import MainPage from 'views/MainPage';
 import InputPage from 'views/InputPage';
+import Title from 'components/Title';
+
+import { Wrapper } from 'Root.styles.js';
 
 function Root() {
   return (
@@ -18,16 +21,16 @@ function Root() {
             <InputPage />
           </Route>
           <Route path='/typography'>
-            <h1>You will see something about typography here soon!</h1>
+            <Title>You will see something about typography here soon!</Title>
           </Route>
           <Route path='/colors'>
-            <h1>You will see something about colors here soon!</h1>
+            <Title>You will see something about colors here soon!</Title>
           </Route>
           <Route path='/spaces'>
-            <h1>You will see something about spaces here soon!</h1>
+            <Title>You will see something about spaces here soon!</Title>
           </Route>
           <Route path='/grid'>
-            <h1>You will see something about grid here soon!</h1>
+            <Title>You will see something about grid here soon!</Title>
           </Route>
           <Route path='/'>
             <MainPage />
