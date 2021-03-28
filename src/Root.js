@@ -11,25 +11,25 @@ function Root() {
       <Navigation />
       <Wrapper>
         <Switch>
-          <Route path="/buttons">
+          <Route path='/buttons'>
             <ButtonPage />
           </Route>
-          <Route path="/inputs">
+          <Route path='/inputs'>
             <InputPage />
           </Route>
-          <Route path="/typography">
+          <Route path='/typography'>
             <h1>You will see something about typography here soon!</h1>
           </Route>
-          <Route path="/colors">
+          <Route path='/colors'>
             <h1>You will see something about colors here soon!</h1>
           </Route>
-          <Route path="/spaces">
+          <Route path='/spaces'>
             <h1>You will see something about spaces here soon!</h1>
           </Route>
-          <Route path="/grid">
+          <Route path='/grid'>
             <h1>You will see something about grid here soon!</h1>
           </Route>
-          <Route path="/">
+          <Route path='/'>
             <MainPage />
           </Route>
         </Switch>
