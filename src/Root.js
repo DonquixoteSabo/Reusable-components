@@ -1,8 +1,20 @@
+import Navigation from 'components/Navigation';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import ButtonPage from 'views/ButtonPage';
+import { Wrapper } from 'Root.styles.js';
+
 function Root() {
   return (
-    <div>
-      siema <h1>zaczynamy impreze</h1>
-    </div>
+    <Router>
+      <Navigation />
+      <Wrapper>
+        <Switch>
+          <Route path="/">
+            <ButtonPage />
+          </Route>
+        </Switch>
+      </Wrapper>
+    </Router>
   );
 }
 
