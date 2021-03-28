@@ -1,7 +1,7 @@
-import React from 'react';
+import Title from 'components/Title';
 
 function MainPage() {
-  return <div>ale ze to strona glowna jest to kox akurat</div>;
+  return <Title>ale ze to strona glowna jest to kox akurat</Title>;
 }
 
 export default MainPage;
