@@ -5,18 +5,35 @@ import renderWithProviders from 'renderWIthProviders';
 describe('Navigation', () => {
   it('checks Navigation render', () => {
     renderWithProviders(<Navigation />);
-    expect(screen.getByText('Colors')).toBeInTheDocument();
-    expect(screen.getByText('Typography')).toBeInTheDocument();
-    expect(screen.getByText('Spaces')).toBeInTheDocument();
-    expect(screen.getByText('Buttons')).toBeInTheDocument();
-    expect(screen.getByText('Inputs')).toBeInTheDocument();
-    expect(screen.getByText('Grid')).toBeInTheDocument();
+    const buttonsLink = screen.getByText('Buttons');
+    const colorsLink = screen.getByText('Colors');
+    const typographyLink = screen.getByText('Typography');
+    const spacesLink = screen.getByText('Spaces');
+    const inputsLink = screen.getByText('Inputs');
+    const gridLink = screen.getByText('Grid');
+
+    expect(colorsLink).toBeInTheDocument();
+    expect(typographyLink).toBeInTheDocument();
+    expect(spacesLink).toBeInTheDocument();
+    expect(buttonsLink).toBeInTheDocument();
+    expect(inputsLink).toBeInTheDocument();
+    expect(gridLink).toBeInTheDocument();
   });
   it('checks selecting active element', () => {
     renderWithProviders(<Navigation />);
     const buttonsLink = screen.getByText('Buttons');
+    const colorsLink = screen.getByText('Colors');
+    const typographyLink = screen.getByText('Typography');
+    const spacesLink = screen.getByText('Spaces');
+    const inputsLink = screen.getByText('Inputs');
+    const gridLink = screen.getByText('Grid');
 
     fireEvent.click(buttonsLink);
-    expect(buttonsLink).toHaveClass('selected');
+    expect(buttonsLink).toHaveClass('active');
+    expect(colorsLink).not.toHaveClass('active');
+    expect(typographyLink).not.toHaveClass('active');
+    expect(spacesLink).not.toHaveClass('active');
+    expect(inputsLink).not.toHaveClass('active');
+    expect(gridLink).not.toHaveClass('active');
   });
 });
