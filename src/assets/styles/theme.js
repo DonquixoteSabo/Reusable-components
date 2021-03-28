@@ -2,6 +2,7 @@ const theme = {
   colors: {
     white: '#FAFBFD',
     gray: '#3F3F3F',
+    gray2: '#4F4F4F',
     silver: '#9E9E9E',
     //Button colors
     default: '#E0E0E0',
@@ -18,7 +19,7 @@ const theme = {
     s: '14px',
     m: '16px',
     l: '18px',
-    xl: '20px',
+    xl: '24px',
   },
   buttonSizes: {
     sm: '5px 10px',

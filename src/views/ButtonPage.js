@@ -1,7 +1,7 @@
-import React from 'react';
+import Title from 'components/Title';
 
 function ButtonPage() {
-  return <div>strona z buttonami PAPA</div>;
+  return <Title>strona z buttonami PAPA</Title>;
 }
 
 export default ButtonPage;
