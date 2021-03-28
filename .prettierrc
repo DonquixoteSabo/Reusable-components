@@ -2,5 +2,6 @@
     "singleQuote": true,
     "tabWidth": 2,
     "arrowParens": "avoid",
-    "endOfLine": "auto"
+    "endOfLine": "auto",
+    "jsxSingleQuote": true
 }

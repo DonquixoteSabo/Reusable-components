@@ -17,7 +17,7 @@ export const Nav = styled.nav`
   height: 100vh;
   background-color: ${({ theme }) => theme.colors.white};
 
-  .selected {
+  .active {
     color: #090f31;
   }
 `;

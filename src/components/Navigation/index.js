@@ -29,7 +29,7 @@ const navItems = [
 function Navigation() {
   return (
     <Nav>
-      <StyledLink to="">
+      <StyledLink to='/'>
         <header>
           <span>Reusable</span> Components!
         </header>
@@ -38,9 +38,7 @@ function Navigation() {
       <List>
         {navItems.map(({ path, content }) => (
           <Item key={path}>
-            <StyledLink to={`/${path}`} activeClassName="selected">
-              {content}
-            </StyledLink>
+            <StyledLink to={`/${path}`}>{content}</StyledLink>
           </Item>
         ))}
       </List>

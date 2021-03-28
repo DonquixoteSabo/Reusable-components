@@ -1,22 +1,85 @@
 import { screen, fireEvent } from '@testing-library/react';
 import Navigation from 'components/Navigation';
 import renderWithProviders from 'renderWIthProviders';
+import Root from 'Root';
 
 describe('Navigation', () => {
   it('checks Navigation render', () => {
     renderWithProviders(<Navigation />);
-    expect(screen.getByText('Colors')).toBeInTheDocument();
-    expect(screen.getByText('Typography')).toBeInTheDocument();
-    expect(screen.getByText('Spaces')).toBeInTheDocument();
-    expect(screen.getByText('Buttons')).toBeInTheDocument();
-    expect(screen.getByText('Inputs')).toBeInTheDocument();
-    expect(screen.getByText('Grid')).toBeInTheDocument();
+
+    const buttonsLink = screen.getByText('Buttons');
+    const colorsLink = screen.getByText('Colors');
+    const typographyLink = screen.getByText('Typography');
+    const spacesLink = screen.getByText('Spaces');
+    const inputsLink = screen.getByText('Inputs');
+    const gridLink = screen.getByText('Grid');
+
+    expect(colorsLink).toBeInTheDocument();
+    expect(typographyLink).toBeInTheDocument();
+    expect(spacesLink).toBeInTheDocument();
+    expect(buttonsLink).toBeInTheDocument();
+    expect(inputsLink).toBeInTheDocument();
+    expect(gridLink).toBeInTheDocument();
   });
   it('checks selecting active element', () => {
     renderWithProviders(<Navigation />);
+
     const buttonsLink = screen.getByText('Buttons');
+    const colorsLink = screen.getByText('Colors');
+    const typographyLink = screen.getByText('Typography');
+    const spacesLink = screen.getByText('Spaces');
+    const inputsLink = screen.getByText('Inputs');
+    const gridLink = screen.getByText('Grid');
 
     fireEvent.click(buttonsLink);
-    expect(buttonsLink).toHaveClass('selected');
+    expect(buttonsLink).toHaveClass('active');
+    expect(colorsLink).not.toHaveClass('active');
+    expect(typographyLink).not.toHaveClass('active');
+    expect(spacesLink).not.toHaveClass('active');
+    expect(inputsLink).not.toHaveClass('active');
+    expect(gridLink).not.toHaveClass('active');
+  });
+  it('checks changing pages', () => {
+    renderWithProviders(<Root />);
+
+    const buttonsLink = screen.getByText('Buttons');
+    const inputsLink = screen.getByText('Inputs');
+    const colorsLink = screen.getByText('Colors');
+    const typographyLink = screen.getByText('Typography');
+    const spacesLink = screen.getByText('Spaces');
+    const gridLink = screen.getByText('Grid');
+    const pageLogo = screen.getByText('Reusable');
+
+    //Buttons page
+    fireEvent.click(buttonsLink);
+    expect(screen.getByText('strona z buttonami PAPA')).toBeInTheDocument();
+    //Inputs page
+    fireEvent.click(inputsLink);
+    expect(screen.getByText('strona z inputami ale koc')).toBeInTheDocument();
+    //Colors page
+    fireEvent.click(colorsLink);
+    expect(
+      screen.getByText('You will see something about colors here soon!')
+    ).toBeInTheDocument();
+    //Typography page
+    fireEvent.click(typographyLink);
+    expect(
+      screen.getByText('You will see something about typography here soon!')
+    ).toBeInTheDocument();
+    //Spaces page
+    fireEvent.click(spacesLink);
+    expect(
+      screen.getByText('You will see something about spaces here soon!')
+    ).toBeInTheDocument();
+    //Grid page
+    fireEvent.click(gridLink);
+    expect(
+      screen.getByText('You will see something about grid here soon!')
+    ).toBeInTheDocument();
+    //Main page
+    fireEvent.click(pageLogo);
+    expect(
+      screen.getByText('ale ze to strona glowna jest to kox akurat')
+    ).toBeInTheDocument();
   });
 });
