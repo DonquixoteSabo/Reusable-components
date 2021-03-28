@@ -1,10 +1,12 @@
 import { screen, fireEvent } from '@testing-library/react';
 import Navigation from 'components/Navigation';
 import renderWithProviders from 'renderWIthProviders';
+import Root from 'Root';
 
 describe('Navigation', () => {
   it('checks Navigation render', () => {
     renderWithProviders(<Navigation />);
+
     const buttonsLink = screen.getByText('Buttons');
     const colorsLink = screen.getByText('Colors');
     const typographyLink = screen.getByText('Typography');
@@ -21,6 +23,7 @@ describe('Navigation', () => {
   });
   it('checks selecting active element', () => {
     renderWithProviders(<Navigation />);
+
     const buttonsLink = screen.getByText('Buttons');
     const colorsLink = screen.getByText('Colors');
     const typographyLink = screen.getByText('Typography');
@@ -35,5 +38,42 @@ describe('Navigation', () => {
     expect(spacesLink).not.toHaveClass('active');
     expect(inputsLink).not.toHaveClass('active');
     expect(gridLink).not.toHaveClass('active');
+  });
+  it('checks changing pages', () => {
+    renderWithProviders(<Root />);
+
+    const buttonsLink = screen.getByText('Buttons');
+    const inputsLink = screen.getByText('Inputs');
+    const colorsLink = screen.getByText('Colors');
+    const typographyLink = screen.getByText('Typography');
+    const spacesLink = screen.getByText('Spaces');
+    const gridLink = screen.getByText('Grid');
+
+    //Buttons page
+    fireEvent.click(buttonsLink);
+    expect(screen.getByText('strona z buttonami PAPA')).toBeInTheDocument();
+    //Inputs page
+    fireEvent.click(inputsLink);
+    expect(screen.getByText('strona z inputami ale koc')).toBeInTheDocument();
+    //Colors page
+    fireEvent.click(colorsLink);
+    expect(
+      screen.getByText('You will see something about colors here soon!')
+    ).toBeInTheDocument();
+    //Typography page
+    fireEvent.click(typographyLink);
+    expect(
+      screen.getByText('You will see something about typography here soon!')
+    ).toBeInTheDocument();
+    //Spaces page
+    fireEvent.click(spacesLink);
+    expect(
+      screen.getByText('You will see something about spaces here soon!')
+    ).toBeInTheDocument();
+    //Grid page
+    fireEvent.click(gridLink);
+    expect(
+      screen.getByText('You will see something about grid here soon!')
+    ).toBeInTheDocument();
   });
 });
