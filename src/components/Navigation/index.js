@@ -38,9 +38,7 @@ function Navigation() {
       <List>
         {navItems.map(({ path, content }) => (
           <Item key={path}>
-            <StyledLink to={`/${path}`} activeClassName="selected">
-              {content}
-            </StyledLink>
+            <StyledLink to={`/${path}`}>{content}</StyledLink>
           </Item>
         ))}
       </List>
