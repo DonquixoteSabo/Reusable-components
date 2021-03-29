@@ -22,9 +22,9 @@ const theme = {
     xl: '24px',
   },
   buttonSizes: {
-    sm: '5px 10px',
-    md: '10px 15px',
-    lg: '20px 30px',
+    sm: '7px 15px',
+    md: '9px 17px',
+    lg: '12px 20px',
   },
 };
 

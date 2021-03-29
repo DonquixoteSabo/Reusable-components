@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Button = styled.button`
   border: none;
@@ -15,6 +15,55 @@ const Button = styled.button`
   &:focus {
     background-color: ${({ theme }) => theme.colors.defaultHover};
   }
+
+  ${props =>
+    props.variant === 'outline' &&
+    css`
+      background-color: white;
+      border: 1px solid #3d5afe;
+      color: #3d5afe;
+      &:hover,
+      &:focus {
+        background: rgba(41, 98, 255, 0.1);
+      }
+    `}
+  ${props =>
+    props.variant === 'text' &&
+    css`
+      background-color: white;
+      border: none;
+      color: #3d5afe;
+      &:hover,
+      &:focus {
+        background: rgba(41, 98, 255, 0.1);
+      }
+    `}
+    ${props =>
+    props.disableShadow &&
+    css`
+      box-shadow: none;
+    `}
+    ${props =>
+    props.disabled &&
+    css`
+      box-shadow: none;
+      color: ${({ theme }) => theme.colors.silver};
+    `}
+    ${props =>
+    props.size === 'sm' &&
+    css`
+      padding: ${({ theme }) => theme.buttonSizes.sm};
+    `}
+    ${props =>
+    props.size === 'md' &&
+    css`
+      padding: ${({ theme }) => theme.buttonSizes.md};
+    `}
+    ${props =>
+    props.size === 'lg' &&
+    css`
+      padding: ${({ theme }) => theme.buttonSizes.lg};
+    `}
 `;
 
 export default Button;
