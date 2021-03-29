@@ -52,10 +52,12 @@ describe('Navigation', () => {
 
     //Buttons page
     fireEvent.click(buttonsLink);
-    expect(screen.getByText('strona z buttonami PAPA')).toBeInTheDocument();
+    expect(screen.getByText('Button component')).toBeInTheDocument();
     //Inputs page
     fireEvent.click(inputsLink);
-    expect(screen.getByText('strona z inputami ale koc')).toBeInTheDocument();
+    expect(
+      screen.getByText('You will see something about inputs here soon!')
+    ).toBeInTheDocument();
     //Colors page
     fireEvent.click(colorsLink);
     expect(

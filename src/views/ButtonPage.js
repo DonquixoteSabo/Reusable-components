@@ -5,7 +5,7 @@ import { Wrapper } from './ButtonPage.styles';
 function ButtonPage() {
   return (
     <>
-      <Title>strona z buttonami PAPA</Title>
+      <Title>Button component</Title>
       <a
         href='https://material.io/resources/icons/?icon=add_shopping_cart&style=baseline'
         target='_blank'

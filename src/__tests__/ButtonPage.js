@@ -5,6 +5,6 @@ import renderWithProviders from 'renderWIthProviders';
 describe('Button Page', () => {
   it('renders Button Page', () => {
     renderWithProviders(<ButtonPage />);
-    expect(screen.getByText('strona z buttonami PAPA')).toBeInTheDocument();
+    expect(screen.getByText('Button component')).toBeInTheDocument();
   });
 });
