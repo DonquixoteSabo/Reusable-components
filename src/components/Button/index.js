@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-const Button = styled.button`
+const StyledButton = styled.button`
   border: none;
   background-color: ${({ theme }) => theme.colors.default};
   box-shadow: 0px 2px 3px rgba(51, 51, 51, 0.2);
@@ -64,6 +64,55 @@ const Button = styled.button`
     css`
       padding: ${({ theme }) => theme.buttonSizes.lg};
     `}
+    ${props =>
+    props.color === 'primary' &&
+    css`
+      background-color: ${({ theme }) => theme.colors.primary};
+
+      &:hover,
+      &:focus {
+        background-color: ${({ theme }) => theme.colors.primaryHover};
+      }
+    `}
+    ${props =>
+    props.color === 'secondary' &&
+    css`
+      background-color: ${({ theme }) => theme.colors.secondary};
+
+      &:hover,
+      &:focus {
+        background-color: ${({ theme }) => theme.colors.secondaryHover};
+      }
+    `}
+    ${props =>
+    props.color === 'danger' &&
+    css`
+      background-color: ${({ theme }) => theme.colors.danger};
+
+      &:hover,
+      &:focus {
+        background-color: ${({ theme }) => theme.colors.dangerHover};
+      }
+    `}
 `;
+
+function Button(props) {
+  if (props.startIcon) {
+    return (
+      <StyledButton {...props}>
+        <span className='material-icons'>{props.startIcon}</span>
+        {props.children}
+      </StyledButton>
+    );
+  }
+  if (props.endIcon) {
+    return (
+      <StyledButton {...props}>
+        {props.children} <span className='material-icons'>{props.endIcon}</span>
+      </StyledButton>
+    );
+  }
+  return <StyledButton {...props} />;
+}
 
 export default Button;
