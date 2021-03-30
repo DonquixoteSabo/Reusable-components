@@ -17,7 +17,10 @@
     </a>
     <span> | </span>
     <a href="https://devchallenges.io/challenges/ohgVTyJCbm5OZyTB2gNY">
-      Challenge
+      Button Challenge
+    </a>
+    <a href="https://devchallenges.io/challenges/TSqutYM4c5WtluM7QzGp">
+      Input Challenge
     </a>
   </h3>
 </div>
