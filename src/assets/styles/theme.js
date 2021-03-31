@@ -2,7 +2,9 @@ const theme = {
   colors: {
     white: '#FAFBFD',
     gray: '#3F3F3F',
+    gray1: '#333333',
     gray2: '#4F4F4F',
+    gray3: '#828282',
     silver: '#9E9E9E',
     //Button colors
     default: '#E0E0E0',
