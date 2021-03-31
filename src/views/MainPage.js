@@ -1,7 +1,7 @@
 import Title from 'components/Title';
 
 function MainPage() {
-  return <Title>ale ze to strona glowna jest to kox akurat</Title>;
+  return <Title>Main Page</Title>;
 }
 
 export default MainPage;
