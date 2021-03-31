@@ -55,9 +55,7 @@ describe('Navigation', () => {
     expect(screen.getByText('Button component')).toBeInTheDocument();
     //Inputs page
     fireEvent.click(inputsLink);
-    expect(
-      screen.getByText('You will see something about inputs here soon!')
-    ).toBeInTheDocument();
+    expect(screen.getByText('Input component')).toBeInTheDocument();
     //Colors page
     fireEvent.click(colorsLink);
     expect(
@@ -80,8 +78,6 @@ describe('Navigation', () => {
     ).toBeInTheDocument();
     //Main page
     fireEvent.click(pageLogo);
-    expect(
-      screen.getByText('ale ze to strona glowna jest to kox akurat')
-    ).toBeInTheDocument();
+    expect(screen.getByText('Main Page')).toBeInTheDocument();
   });
 });
