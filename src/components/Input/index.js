@@ -1,10 +1,29 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-const Form = styled.form`
+const Group = styled.div`
   color: ${({ theme }) => theme.colors.gray3};
   display: flex;
   flex-direction: column;
+  label {
+    font-weight: normal;
+    font-size: ${({ theme }) => theme.fontSize.xs};
+  }
+  &:focus-within {
+    .color {
+      color: ${({ theme }) => theme.colors.primary};
+    }
+  }
+
+  ${props =>
+    props.error &&
+    css`
+      &:focus-within {
+        .color {
+          color: ${({ theme }) => theme.colors.danger};
+        }
+      }
+    `}
 `;
 
 const StyledInput = styled.input`
@@ -23,11 +42,15 @@ const StyledInput = styled.input`
   &:focus {
     border: 1px solid ${({ theme }) => theme.colors.primary};
   }
-`;
 
-const Label = styled.label`
-  font-weight: normal;
-  font-size: ${({ theme }) => theme.fontSize.xs};
+  ${props =>
+    props.error &&
+    css`
+      border: 1px solid ${({ theme }) => theme.colors.danger};
+      &:focus {
+        border: 1px solid ${({ theme }) => theme.colors.danger};
+      }
+    `}
 `;
 
 // const HelperText = styled.small`
@@ -38,13 +61,13 @@ const Label = styled.label`
 
 function Input(props) {
   return (
-    <Form>
-      <Label className='label' htmlFor='input'>
+    <Group error={props.error}>
+      <label className='color' htmlFor='input'>
         {props.label}
-      </Label>
+      </label>
       <StyledInput id='input' name='input' type='text' {...props} />
       {/* <HelperText>{props.helperText}</HelperText> */}
-    </Form>
+    </Group>
   );
 }
 
