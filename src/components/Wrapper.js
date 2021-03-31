@@ -14,6 +14,9 @@ export const Wrapper = styled.article`
     line-height: 12px;
     margin-bottom: 15px;
   }
+  div {
+    margin: 10px;
+  }
   .small-container {
     display: flex;
     div {
