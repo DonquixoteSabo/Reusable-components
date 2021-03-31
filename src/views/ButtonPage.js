@@ -1,6 +1,6 @@
 import Button from 'components/Button';
 import Title from 'components/Title';
-import { Wrapper } from './ButtonPage.styles';
+import { Wrapper } from 'components/Wrapper';
 
 function ButtonPage() {
   return (
