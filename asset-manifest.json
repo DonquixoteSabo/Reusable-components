@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/Reusable-components/static/js/main.ddb98198.chunk.js",
+    "main.js.map": "/Reusable-components/static/js/main.ddb98198.chunk.js.map",
+    "runtime-main.js": "/Reusable-components/static/js/runtime-main.bb957bb9.js",
+    "runtime-main.js.map": "/Reusable-components/static/js/runtime-main.bb957bb9.js.map",
+    "static/js/2.deed777f.chunk.js": "/Reusable-components/static/js/2.deed777f.chunk.js",
+    "static/js/2.deed777f.chunk.js.map": "/Reusable-components/static/js/2.deed777f.chunk.js.map",
+    "index.html": "/Reusable-components/index.html",
+    "static/js/2.deed777f.chunk.js.LICENSE.txt": "/Reusable-components/static/js/2.deed777f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bb957bb9.js",
+    "static/js/2.deed777f.chunk.js",
+    "static/js/main.ddb98198.chunk.js"
+  ]
+}
