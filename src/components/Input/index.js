@@ -51,6 +51,14 @@ const StyledInput = styled.input`
         border: 1px solid ${({ theme }) => theme.colors.danger};
       }
     `}
+
+  ${props =>
+    props.error &&
+    css`
+      background: #f2f2f2;
+
+      border: 1px solid ${({ theme }) => theme.colors.default};
+    `}
 `;
 
 const HelperText = styled.small`
