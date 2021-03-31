@@ -53,11 +53,11 @@ const StyledInput = styled.input`
     `}
 `;
 
-// const HelperText = styled.small`
-//   font-weight: normal;
-//   font-size: 10px;
-//   color: ${({ theme }) => theme.colors.gray3};
-// `;
+const HelperText = styled.small`
+  font-weight: normal;
+  font-size: 10px;
+  color: ${({ theme }) => theme.colors.gray3};
+`;
 
 function Input(props) {
   return (
@@ -66,7 +66,7 @@ function Input(props) {
         {props.label}
       </label>
       <StyledInput id='input' name='input' type='text' {...props} />
-      {/* <HelperText>{props.helperText}</HelperText> */}
+      <HelperText className='color'>{props.helperText}</HelperText>
     </Group>
   );
 }
